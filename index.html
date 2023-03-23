@@ -3,17 +3,27 @@
 	<head>
 		<title>jQuery Crash Course</title>
 		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<style>
+			body {
+				background-color: aqua;
+				font-size: 20px;
+				padding: 1em 3em 1em;
+			}
+			h1 {
+				text-align: center;
+				background-color: grey;
+			}
+			h2 {
+				background-color: cadetblue;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
 			<h1>jQuery Crash Course</h1>
 		</header>
 		<div id="container">
-			<h1 id="heading1">Heading One</h1>
+			<h2 id="heading1">Heading One</h2>
 			<p id="para1">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id
 				lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
@@ -21,7 +31,7 @@
 				consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			</p>
 
-			<h1 class="heading2">Heading Two</h1>
+			<h2 class="heading2">Heading Two</h2>
 			<p class="para2">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id
 				lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
@@ -30,13 +40,13 @@
 			</p>
 
 			<ul id="list">
-				<li>List Item</li>
-				<li>List Item</li>
-				<li>List Item</li>
-				<li>List Item</li>
-				<li>List Item</li>
-				<li>List Item</li>
-				<li>List Item</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
+				<li>Lorem ipsum</li>
 			</ul>
 
 			<input type="button" value="Button 1" />
@@ -45,6 +55,31 @@
 
 			<a href="http://google.com">Google</a>
 			<a href="http://yahoo.com">Yahoo</a>
+			<script>
+				// selects the h2 with heading1 id
+				// $("h2#heading1").hide();
+				// selects the heading1 id
+				// $("#heading1").hide();
+
+				// selects the p with para2 class
+				// $("p.para2").hide();
+				// selects the para2 class
+				// $(".para2").hide();
+
+				// selects span nested in p
+				// $("p span").css("color", "#fff");
+
+				// selects the first li nested in ul with list id 
+				// $("ul#list li:first").css("color", "red");
+
+				// selects the elements with submit type
+				// $(":submit").hide();
+
+				// selects the elements with href attribute
+				$("[href]").css("color", "red");
+				// selects the elements with href attribute and specific value
+				$("[href='http://yahoo.com']").css("color", "red");
+			</script>
 		</div>
 	</body>
 </html>

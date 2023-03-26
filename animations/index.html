@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<style>
+			body {
+				font-size: 17px;
+				font-family: arial;
+				background: #f4f4f4;
+				line-height: 1.5em;
+			}
+			#container {
+				width: 90%;
+				margin: auto;
+				padding: 10px;
+			}
+
+			#box {
+				background: #333;
+				color: #fff;
+				width: 500px;
+				height: 90px;
+				padding: 40px;
+				text-align: center;
+			}
+
+			#box2 {
+				background: red;
+				width: 100px;
+				height: 100px;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<button id="btnFadeOut">Fade Out</button>
+			<button id="btnFadeIn">Fade In</button>
+			<button id="btnFadeToggle">Fade Toggle</button>
+
+			<hr />
+
+			<button id="btnSlideUp">Slide Up</button>
+			<button id="btnSlideDown">SlideDown</button>
+			<button id="btnSlideToggle">Slide Toggle</button>
+			<button id="btnStop">Stop</button>
+			<hr />
+
+			<div id="box"><h1>Hello World</h1></div>
+
+			<hr />
+
+			<button id="moveLeft">Move Left</button>
+			<button id="moveRight">Move Right</button>
+			<button id="moveAround">Move Around</button>
+			<div id="box2"></div>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("#btnFadeOut").click(function () {
+					$("#box").fadeOut(2000);
+				});
+
+				$("#btnFadeIn").click(function () {
+					$("#box").fadeIn(4000);
+				});
+
+				$("#btnFadeToggle").click(function () {
+					$("#box").fadeToggle(1000);
+				});
+
+				$("#btnSlideUp").click(function () {
+					$("#box").slideUp();
+				});
+
+				$("#btnSlideDown").click(function () {
+					$("#box").slideDown();
+				});
+
+				$("#btnSlideToggle").click(function () {
+					$("#box").slideToggle();
+				});
+
+				$("#btnStop").click(function () {
+					$("#box").stop();
+				});
+
+				$("#moveLeft").click(function () {
+					$("#box2").animate({ left: 500 });
+				});
+
+				$("#moveRight").click(function () {
+					$("#box2").animate({ left: 0 });
+				});
+
+				$("#moveAround").click(function () {
+					var box = $("#box2");
+					box.animate({
+						left: 300,
+						top: 0,
+					});
+					box.animate({
+						left: 300,
+						top: 300,
+					});
+					box.animate({
+						left: 0,
+						top: 300,
+					});
+					box.animate({
+						left: 0,
+						top: 0,
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

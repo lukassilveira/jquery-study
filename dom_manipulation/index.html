@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jQuery Crash Course | DOM Manipulation</title>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<style>
+			body {
+				background-color: aqua;
+				font-size: 20px;
+				padding: 1em 3em 1em;
+			}
+			#container {
+				width: 90%;
+				margin: auto;
+				padding: 10px;
+			}
+			.myClass {
+				color: blue;
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<button id="btn1">Button 1</button>
+			<button id="btn2">Button 2</button>
+			<button id="btn3">Button 3</button>
+			<p class="para1">This is a paragraph</p>
+			<p class="para2">This is another paragraph</p>
+			<div id="myDiv"></div>
+			<input type="text" id="newItem" />
+			<ul id="list">
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+				<li>List Item 4</li>
+			</ul>
+			<a href="http://google.com">Google</a>
+			<ul id="users"></ul>
+		</div>
+		<script>
+			var index = 0;
+			var array = ["Arthur", "Ben", "Clyde"];
+			$(document).ready(function () {
+				index = $("#list").children().length;
+				// $(".para1").css({ color: "red", background: "blue" });
+				// $(".para1").addClass("myClass");
+				// $(".para1").removeClass("myClass");
+				$("#btn1").click(function () {
+					// $(".para1").toggleClass("myClass");
+					$("#myDiv").text(
+						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quasi" +
+							" nemo minima aliquam assumenda quas totam eum corporis adipisci itaque" +
+							" aspernatur doloribus cupiditate recusandae ab at reiciendis, quibusdam" +
+							" expedita inventore."
+					);
+				});
+
+				$("#list").after("<h4>Hey!</h4>");
+
+				$("#btn2").click(function () {
+					index++;
+					$("ul#list").append("<li>List Item " + index + "</li>");
+				});
+
+				$("#btn3").click(function () {
+					$("#list").empty();
+					index = 0;
+				});
+
+				$("a").attr("target", "_blank");
+
+				$("p").wrap("<h1>");
+
+				$("#newItem").keyup(function (e) {
+					if (e.which == 13) {
+						e.preventDefault();
+						$("#list").append("<li>" + e.currentTarget.value + "</li");
+						index++;
+					}
+				});
+
+				$.each(array, function (index, value) {
+					console.log(index + 1 + " " + value);
+				});
+			});
+		</script>
+	</body>
+</html>

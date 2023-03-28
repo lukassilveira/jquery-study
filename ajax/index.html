@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<style>
+			body {
+				background-color: aqua;
+				font-size: 20px;
+				padding: 1em 3em 1em;
+			}
+			#container {
+				width: 90%;
+				margin: auto;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="result"></div>
+			<ul id="users"></ul>
+			<h3>Add Post</h3>
+			<form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+				<input type="text" id="title" placeholder="Title" /><br />
+				<textarea placeholder="Body" id="body"></textarea><br />
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("#result").load("test.html", function (response, status, xhr) {
+					if (status == "success") {
+						alert("Success!");
+					} else if (status == "error") {
+						alert("Error: " + xhr.statusText)
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
